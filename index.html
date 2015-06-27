@@ -9,6 +9,9 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/roboto.min.css" rel="stylesheet">
+    <link href="css/material.min.css" rel="stylesheet">
+    <link href="css/ripples.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -38,10 +41,6 @@
 			<img src="img/html5.png" alt="" class="draggable icon">
 			<img src="img/html5.png" alt="" class="draggable icon">
 		</div>
-		
-		<div class="actions">
-			<button id="input-btn" class="btn btn-success">新しいアイディア</button>
-		</div>
 
 <!-- 		<div class="past-ideas">
 			<div class="idea pull-left">
@@ -67,29 +66,122 @@
 		</div> -->
 
 		<hr>
-		
+
+		<div id="results" class="row">
+			<div class="col-md-4">
+				<div class="card">
+				    <div class="card-height-indicator"></div>
+				    <div class="card-content">
+				        <div class="card-image">
+				            <img src="img/html5.png" alt="Loading image...">
+				        </div>
+
+				        <div class="card-body">
+				            <div><span class="label label-default margin-r-sm">タイトル</span><a href="">タイトル</a></div>
+				            <div><span class="label label-default margin-r-sm">日時　　</span><span>2015/7/1 10:00-15:00</span></div>
+				            <div><span class="label label-default margin-r-sm">場所　　</span><span>東京都港区</span></div>
+				            <div class="arrow_box pull-right"><span>100</span> おもろ</div>
+				        </div>
+
+				        
+				    </div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+				    <div class="card-height-indicator"></div>
+				    <div class="card-content">
+				        <div class="card-image">
+				            <img src="img/html5.png" alt="Loading image...">
+				        </div>
+
+				        <div class="card-body">
+				            <div><span class="label label-default margin-r-sm">タイトル</span><a href="">タイトル</a></div>
+				            <div><span class="label label-default margin-r-sm">日時　　</span><span>2015/7/1 10:00-15:00</span></div>
+				            <div><span class="label label-default margin-r-sm">場所　　</span><span>東京都港区</span></div>
+				            <div class="arrow_box pull-right"><span>100</span> おもろ</div>
+				        </div>
+
+				        
+				    </div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+				    <div class="card-height-indicator"></div>
+				    <div class="card-content">
+				        <div class="card-image">
+				            <img src="img/html5.png" alt="Loading image...">
+				        </div>
+
+				        <div class="card-body">
+				            <div><span class="label label-default margin-r-sm">タイトル</span><a href="">タイトル</a></div>
+				            <div><span class="label label-default margin-r-sm">日時　　</span><span>2015/7/1 10:00-15:00</span></div>
+				            <div><span class="label label-default margin-r-sm">場所　　</span><span>東京都港区</span></div>
+				            <div class="arrow_box pull-right"><span>100</span> おもろ</div>
+				        </div>
+
+				        
+				    </div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+				    <div class="card-height-indicator"></div>
+				    <div class="card-content">
+				        <div class="card-image">
+				            <img src="img/html5.png" alt="Loading image...">
+				        </div>
+
+				        <div class="card-body">
+				            <div><span class="label label-default margin-r-sm">タイトル</span><a href="">タイトル</a></div>
+				            <div><span class="label label-default margin-r-sm">日時　　</span><span>2015/7/1 10:00-15:00</span></div>
+				            <div><span class="label label-default margin-r-sm">場所　　</span><span>東京都港区</span></div>
+				            <div class="arrow_box pull-right"><span>100</span> おもろ</div>
+				        </div>
+
+				        
+				    </div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card">
+				    <div class="card-height-indicator"></div>
+				    <div class="card-content">
+				        <div class="card-image">
+				            <img src="img/html5.png" alt="Loading image...">
+				        </div>
+
+				        <div class="card-body">
+				            <div><span class="label label-default margin-r-sm">タイトル</span><a href="">タイトル</a></div>
+				            <div><span class="label label-default margin-r-sm">日時　　</span><span>2015/7/1 10:00-15:00</span></div>
+				            <div><span class="label label-default margin-r-sm">場所　　</span><span>東京都港区</span></div>
+				            <div class="arrow_box pull-right"><span>100</span> おもろ</div>
+				        </div>
+
+				        
+				    </div>
+				</div>
+			</div>
+		</div>
+
 		<div id="input">
 			<div id="input-icon"></div>
 			<div id="input-icon-selected"></div>
 			<input id="input-title" class="form-control" placeholder="タイトル"></input>
 			<div id="input-image"></div>
 			<textarea id="input-description" class="form-control" rows="10" placeholder="ルールなどの説明"></textarea>
-			<button id="create" class="btn btn-default">アイディア登録</button>
+			<button id="create" class="btn btn-info">アイディア登録</button>
 		</div>
-
-		<div id="results">
-			<table class="table">
-				<tr><th>イメージ	</th><th>タイトル</th></tr>
-				<tr><td><img src="img/html5.png" alt="" class="pull-left"></td><td><a href="">ブラインドサッカー</a></td>
-			</table>
-		</div>
-
+		<div id="input-btn">新しいアイディア</div>
 		
 	</div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/ripples.min.js"></script>
+    <script src="js/material.min.js"></script>
     <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
 

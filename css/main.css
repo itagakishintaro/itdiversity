@@ -6,7 +6,10 @@
 /*マージン*/
 .margin-lr-lg {
 	margin: 0 2rem;
-} 
+}
+.margin-r-sm {
+	margin-right: .5rem;
+}
 
 .well {
 	background-color: white;
@@ -19,7 +22,7 @@
 	text-align: center;
 }
 .cross {
-	margin:  0;
+	margin: 10px 0;
 }
 .past-ideas {
 	height: 200px;
@@ -43,10 +46,57 @@
 #input {
 	margin: 2rem 0;
 }
-#results img {
-	height: 50px;
+
+/*アイコンのドラッグアンドドロップ*/
+.dropped {
+	background-color: lightgray !important;
 }
 
-.dropped {
-	background-color: lightgray;
+/*検索結果*/
+.card-body .label {
+	width: 5rem;
+}
+
+
+
+
+
+/*created by http://cssarrowplease.com/*/
+.arrow_box {
+	text-align: center;
+	width: 100px;
+	height: 34px;
+	line-height: 30px;
+	margin-top: 10px;
+	margin-left: 10px;
+	color: green;
+	border-radius: 8px;
+
+	position: relative;
+	background: #fff;
+	border: 2px solid green;
+	padding: 0 10px;
+}
+.arrow_box:after, .arrow_box:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-right-color: #fff;
+	border-width: 5px;
+	margin-top: -5px;
+}
+.arrow_box:before {
+	border-color: rgba(153, 153, 153, 0);
+	border-right-color: green;
+	border-width: 8px;
+	margin-top: -8px;
 }
