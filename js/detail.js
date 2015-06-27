@@ -1,13 +1,17 @@
     $(function () {
-        // JQCloud
-        $('#jq').jQCloud([]);
+      $('#jq').jQCloud([]);
     	// 入力ボタンクリック
     	$("#comment-enter").on("click",function(){
     	  var com = $("#comment-input").val();
     	  $("#comments").append('<div>' + com + '</div>');
+        var comments = '';
+        $("#comments div").each(function(i, v){
+          console.log($(v).text());
+          comments += ($(v).text() + ' ');
+        });
     	  $.ajax({
          url: 'http://jlp.yahooapis.jp/MAService/V1/parse',
-         data: createParamJSON(com) ,         
+         data: createParamJSON(comments),         
          type: 'GET',
          dataType: "xml",
          cache: false, // キャッシュOFF
@@ -17,7 +21,7 @@
            xml = xmlLikeText.replace("<html><head/><body>", '<?xml version="1.0" encoding="UTF-8" ?>').replace("</body></html>", "");
            // ↑ここまでで変数xmlの中にXML（の構造を持った）テキストが入っている
 
-             // JSONに変換する場合、更に追加で処理
+          // JSONに変換する場合、更に追加で処理
            var json = $.xml2json(xml);
            $('#jq').jQCloud('update',convertjQCloudJSON(json));
          }

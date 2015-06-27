@@ -39,7 +39,7 @@ function convertjQCloudJSON(json){
 	var convert = [];
 	var wList = json.uniq_result.word_list.word;
 	$.each(wList,function(){
-	  convert.push({"text":this.surface,"weight":this.count});
+	  convert.push({text: this.surface, weight: Number(this.count)});
 	});
 	return convert;
 }
