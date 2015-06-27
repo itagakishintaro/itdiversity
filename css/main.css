@@ -16,14 +16,46 @@
 	height: 50px;
 }
 
-/*個別*/
+hr {
+	height: .5rem;
+	background-color: white;
+}
+
+/*ロゴ部分*/
 .thema {
-	margin-top: 5rem;
+	margin-bottom: 5rem;
 	text-align: center;
 }
-.cross {
-	margin: 10px 0;
+	.thema img {
+		height: 10rem !important;
+	}
+.thema-col {
+	height: 10em;
+	background-color: white;
+	border-radius: .5em;
+	padding: 2.5rem;
 }
+.cross {
+	margin-top: 4rem;
+	font-size: 5rem;
+}
+/*アイコン部分*/
+.icon-group {
+	background-color: #fef4f4;
+	padding: .5rem 1rem;
+	margin-right: .5rem;
+}
+.icon-header {
+	padding: 0 1rem;
+	background-color: #fef4f4;
+}
+#icons {
+	margin-bottom: 5rem;
+}
+	#icons img {
+		height: 4rem;
+	}
+/*過去のアイディア*/
 .past-ideas {
 	height: 200px;
 	overflow-x: auto;
@@ -37,11 +69,17 @@
 		width: 180px;
 		border: solic 1px gray;
 	}
-#icons {
-	margin-bottom: 5rem;
-}
-.icon {
-	height: 30px;
+/*アイディア登録*/
+.new-idea {
+	position: fixed;
+	bottom: -5em;
+	right: -5em;
+	background-color: #f0908d;
+	width: 20rem;
+	height: 20rem;
+	border-radius: 10rem;
+	padding-top: 5em;
+	padding-left: 3em;
 }
 #input {
 	margin: 2rem 0;
@@ -50,6 +88,9 @@
 /*アイコンのドラッグアンドドロップ*/
 .dropped {
 	background-color: lightgray !important;
+}
+.big-img {
+	height: 10rem !important;
 }
 
 /*検索結果*/
@@ -63,19 +104,19 @@
 
 /*created by http://cssarrowplease.com/*/
 .arrow_box {
-	text-align: center;
-	width: 100px;
-	height: 34px;
-	line-height: 30px;
+	width: 5em;
+	height: 5em;
 	margin-top: 10px;
-	margin-left: 10px;
 	color: green;
-	border-radius: 8px;
+	border-radius: 30px;
 
-	position: relative;
+	position: absolute;
+	right: 0;
 	background: #fff;
 	border: 2px solid green;
-	padding: 0 10px;
+	padding-top: .5em;
+	padding-left: 1em;
+	z-index: 9;
 }
 .arrow_box:after, .arrow_box:before {
 	right: 100%;
