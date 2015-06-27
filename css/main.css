@@ -2,20 +2,37 @@
 .font-lg {
 	font-size: 1.5rem;
 }
+.underline {
+	width: 100%;
+	border-bottom: solid 1px lightgray;
+}
 
-/*マージン*/
+/*マージン パディング*/
 .margin-lr-lg {
 	margin: 0 2rem;
 }
 .margin-r-sm {
 	margin-right: .5rem;
 }
+.margin-t-200{
+	margin-top: 200px;
+}
+.margin-b-sm {
+	margin-bottom: .5rem;
+}
+.padding-sm {
+	padding: .5rem;
+}
 
+
+/*共通*/
 .well {
 	background-color: white;
 	height: 50px;
 }
-
+.page {
+	background-color: white;
+}
 hr {
 	height: .5rem;
 	background-color: white;
@@ -98,25 +115,56 @@ hr {
 	width: 5rem;
 }
 
-
-
+/*詳細画面*/
+.time {
+	color: gray; 
+}
+.join {
+	position: fixed;
+	bottom: -8rem;
+	right: -5rem;
+	background-color: #f0908d;
+	width: 20rem;
+	height: 20rem;
+	border-radius: 10rem;
+	padding-left: 4rem;
+	padding-top: 5rem;
+	border: 0;
+	color: white;
+	font-size: 2rem;
+}
+.like {
+	position: fixed;
+	bottom: -5rem;
+	left: -3rem;
+	font-size: 20rem;
+}
+.like-count {
+	position: fixed;
+	bottom: 2rem;
+	left: 2.5rem;
+	font-size: 5rem;
+	color: white;
+}
 
 
 /*created by http://cssarrowplease.com/*/
 .arrow_box {
-	width: 5em;
-	height: 5em;
+	width: 3em;
+	height: 3em;
 	margin-top: 10px;
-	color: green;
+	color: #d7003a;
 	border-radius: 30px;
 
 	position: absolute;
 	right: 0;
-	background: #fff;
-	border: 2px solid green;
+	background: #f4b3c2;
+	border: 2px solid #f4b3c2;
 	padding-top: .5em;
-	padding-left: 1em;
+	padding-left: 0;
 	z-index: 9;
+	text-align: center;
+	line-height: 1em;
 }
 .arrow_box:after, .arrow_box:before {
 	right: 100%;
@@ -131,13 +179,13 @@ hr {
 
 .arrow_box:after {
 	border-color: rgba(255, 255, 255, 0);
-	border-right-color: #fff;
+	border-right-color: #f4b3c2;
 	border-width: 5px;
 	margin-top: -5px;
 }
 .arrow_box:before {
 	border-color: rgba(153, 153, 153, 0);
-	border-right-color: green;
+	border-right-color: #f4b3c2;
 	border-width: 8px;
 	margin-top: -8px;
 }
