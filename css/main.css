@@ -1,0 +1,52 @@
+/*フォント*/
+.font-lg {
+	font-size: 1.5rem;
+}
+
+/*マージン*/
+.margin-lr-lg {
+	margin: 0 2rem;
+} 
+
+.well {
+	background-color: white;
+	height: 50px;
+}
+
+/*個別*/
+.thema {
+	margin-top: 5rem;
+	text-align: center;
+}
+.cross {
+	margin:  0;
+}
+.past-ideas {
+	height: 200px;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+	.past-ideas img {
+		height: 180px;
+	}
+	.past-ideas .caption {
+		margin-top: 1rem;
+		width: 180px;
+		border: solic 1px gray;
+	}
+#icons {
+	margin-bottom: 5rem;
+}
+.icon {
+	height: 30px;
+}
+#input {
+	margin: 2rem 0;
+}
+#results img {
+	height: 50px;
+}
+
+.dropped {
+	background-color: lightgray;
+}
