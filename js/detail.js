@@ -23,6 +23,7 @@ $(function() {
         $("#comments div.comment").each(function(i, v) {
             comments += ($(v).text() + ' ');
         });
+        if(comments === '') return;
         $.ajax({
             url: 'http://jlp.yahooapis.jp/MAService/V1/parse',
             data: createParamJSON(comments),
