@@ -3,7 +3,9 @@ $(function() {
     jqdraw();
     // 入力ボタンクリック
     $("#comment-enter").on("click", jqdraw());
-
+    // 地図
+    var ymap = new Y.Map("map");
+    searchLocation($('#map_detail').text(),ymap);
 
     function jqdraw() {
         var com = $("#comment-input").val();
