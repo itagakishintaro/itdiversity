@@ -1,3 +1,10 @@
+footer {
+	text-align: center;
+}
+.sample {
+	text-align: center;
+}
+
 /*フォント*/
 .font-lg {
 	font-size: 1.5rem;
@@ -43,20 +50,54 @@ hr {
 	height: .5rem;
 	background-color: white;
 }
+.bg-black {
+	background-color: black;
+}
 
 /*ロゴ部分*/
+.title {
+	font-size: 5rem;
+}
+.key-visual-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:100%;
+	height: 90%;
+	margin: 0;
+	padding: 0;
+	background-image: url("../img/bg.png");
+	background-size:100% auto;
+	background-repeat: no-repeat;
+	z-index: 0;
+}
+.header {
+	position: absolute;
+	top: 0;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.key-visual {
+	margin-top: 25rem;
+	margin-bottom: 10rem;
+}
 .thema {
 	margin-bottom: 5rem;
 	text-align: center;
+	padding-left: 10rem;
 }
 
 .thema-col {
 	height: 10em;
-	background-color: white;
-	border-radius: .5em;
+	width: 15em;
+/*	background-image: url("../img/flame.png");
+	background-size:contain;
+	background-repeat: no-repeat;*/
+	background-color: rgba(255, 255, 255, 0.75);
+	/*border-radius: .5em;*/
 	padding: 2.5rem;
 }
 .cross {
+	text-align: center;
 	margin-top: 4rem;
 	font-size: 5rem;
 }
@@ -64,14 +105,30 @@ hr {
 .icon-group {
 	padding: .5rem 1rem;
 	margin-right: .5rem;
+	background-color: rgba(255, 255, 255, 0.75);
 }
-.icon-header {
-	border-bottom: solid 1rem #fef4f4;
+.icon-header-1 {
+	border-bottom: solid 1rem #98d98e;
 	margin-bottom: .5rem;
 	text-align: center;
 	font-size: 2rem;
-	color: gray;
+	color: black;
 }
+.icon-header-2 {
+	border-bottom: solid 1rem #f6ad49;
+	margin-bottom: .5rem;
+	text-align: center;
+	font-size: 2rem;
+	color: black;
+}
+.icon-header-3 {
+	border-bottom: solid 1rem #a59aca;
+	margin-bottom: .5rem;
+	text-align: center;
+	font-size: 2rem;
+	color: black;
+}
+
 #icons {
 	margin-bottom: 5rem;
 }
@@ -114,10 +171,25 @@ hr {
 	z-index: 9;
 }
 .dropped {
-	background-color: #f7fcfe !important;
+	background-color: white !important;
 }
 .big-img {
 	height: 10rem !important;
+}
+.icon {
+	height: 4rem !important;
+}
+.mini-icon {
+	height: 3rem !important;
+	position: absolute;
+	top:0;
+	z-index: 9;
+}
+.mini-icon-l0 {
+	left:0;
+}
+.mini-icon-l1 {
+	left:3rem;
 }
 
 /*検索結果*/

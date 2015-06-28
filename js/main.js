@@ -1,5 +1,21 @@
 'use strict';
 
+$(function() {
+    new jBox('Tooltip', {attach: $('.blank')});
+});
+var intervalID = setInterval(function(){
+	$('.blank').stop().animate({
+            backgroundColor: 'rgba(245,229,107,0.75);'
+        }, 300).animate({
+            backgroundColor: 'rgba(255, 255, 255, 0.75)'
+        }, 300);
+    },1000);
+
+
+$('.blank').hover(function(){
+    clearInterval(intervalID);
+});
+
 $('.card .count').each(function(i, v){
 	$(v).text(likeCounts[i]);
 });
@@ -14,11 +30,13 @@ $('.draggable').draggable();
 $('.droppable').droppable({
 	drop: function( event, ui ) {
     	$(this).addClass( 'dropped' );
+    	ui.draggable.removeClass('icon');
     	ui.draggable.addClass('big-img');
     },
     out: function( event, ui ) {
     	$(this).removeClass( 'dropped' );
     	ui.draggable.removeClass('big-img');
+    	ui.draggable.addClass('icon');
     }
 });
 
