@@ -72,6 +72,7 @@ hr {
 	z-index: 0;
 }
 .header {
+	width: 100%;
 	position: absolute;
 	top: 0;
 	background-color: rgba(255, 255, 255, 0.5);
@@ -241,6 +242,10 @@ hr {
 	background-image: url("../img/bubble.png");
 	background-size:contain;
 	background-repeat: no-repeat;
+}
+.comment-line {
+	height: 20rem;
+	overflow: scroll;
 }
 
 /*created by http://cssarrowplease.com/*/
