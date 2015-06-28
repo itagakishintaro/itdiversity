@@ -1,6 +1,9 @@
 $(function() {
     $('.like-count').text(likeCounts[getQuerystring('id')]);
-
+    // ページ内容設定
+    setPageContents();
+    // コメント設定
+    initializeCommnet();
     $('#jq').jQCloud([]);
     jqdraw();
     // 入力ボタンクリック
@@ -45,6 +48,8 @@ $(function() {
         if (com === '') return;
 
         var now = new XDate().toString('yyyy/MM/dd hh:mm');
+        // ローカルストレージに保存
+        saveComment(now,"板垣真太郎",com);
         var html = `
           <div>
               <span class="time">${now}</span>
@@ -91,4 +96,61 @@ function getQuerystring(key, default_)
     return default_;  
    else  
     return qs[1];  
-}  
+}
+
+function setPageContents(){
+	var pContents = detailLists[getQuerystring('id')];
+	// タイトル
+	$('#titleDetail').text(pContents.title);
+	// 日時設定
+	setEventDate($('#dateDetail'),moment(pContents.fromDate),moment(pContents.toDate));
+	// 場所設定
+	$('#map_detail').html(pContents.place);
+	// 内容
+	$('#descriptionDetail').html(pContents.contents);
+}
+
+/**
+ * momentの日付をtargetに表示する
+ * @param target 表示対象のdiv
+ * @param fromDate 開始日時
+ * @param toDate 終了日時
+ */
+function setEventDate(target,fromDate,toDate){
+	var f = "YYYY年MM月DD日 HH時mm分";
+	var ffDate = fromDate.format(f);
+	var ftDate = toDate.format(f);
+	target.text(ffDate + " ～ " + ftDate);
+}
+
+/**
+ * コメント設定
+ *
+ *
+ */
+function initializeCommnet(){
+  var com = JSON.parse(getItem(getQuerystring("id")));
+  setComments(com.comments);
+}
+
+function setComments(commentArray){
+	$.each(commentArray,function(){
+		var com = $(this)[0];
+		$('#comments').append(
+		'<div><span class="time">' + com.date +
+		'</span><span class="name">' + com.name + 
+		'</span><div class="comment margin-b-sm">' + com.comment + 
+		'</div></div>');
+	});
+}
+
+function saveComment(now,user,com){
+	var localComment = getItem(getQuerystring("id"));
+	localComment = JSON.parse(localComment);
+	localComment.comments.push({
+		date:now,
+		name:"板垣真太郎",
+		comment:com
+	});
+	setItem(getQuerystring('id'),JSON.stringify(localComment));
+}

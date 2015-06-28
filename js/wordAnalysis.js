@@ -66,7 +66,6 @@ function searchLocation(address,mapobj){
            xml = xmlLikeText.replace("<html><head/><body>", '<?xml version="1.0" encoding="UTF-8" ?>').replace("</body></html>", "").replace("<html><head><style/></head><body>","");
              var json = $.xml2json(xml);
              var location = convertLocation(json);
-             console.log(location);
              setMap(mapobj,location);
             }
         });
@@ -94,6 +93,5 @@ function createParamJSONForLocation(address){
 function convertLocation(json){
 	var location = json.feature.geometry.coordinates;
 	var locationArray = location.split(',');
-	console.log(locationArray);
 	return new Y.LatLng(parseFloat(locationArray[1]),parseFloat(locationArray[0]));
 }
