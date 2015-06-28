@@ -1,7 +1,5 @@
 'use strict';
 
-$('#table').tablesorter( { sortList: [[1, 1]] } );
-
 $('.card .count').each(function(i, v){
 	$(v).text(likeCounts[i]);
 });
