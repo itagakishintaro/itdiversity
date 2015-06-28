@@ -66,6 +66,8 @@ function searchLocation(address,mapobj){
            xml = xmlLikeText.replace("<html><head/><body>", '<?xml version="1.0" encoding="UTF-8" ?>').replace("</body></html>", "").replace("<html><head><style/></head><body>","");
              var json = $.xml2json(xml);
              var location = convertLocation(json);
+             //var marker = new Y.Marker(location);
+			//	 mapobj.addFeature(marker);
              setMap(mapobj,location);
             }
         });
