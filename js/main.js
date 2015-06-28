@@ -28,12 +28,7 @@ $('#input-btn').on('click', function() {
 
 });
 
-$('.draggable').draggable({
-    stop: function(){
-        console.log('test');
-        $(this).addClass('center');
-    }
-});
+$('.draggable').draggable();
 $('.droppable').droppable({
 	drop: function( event, ui ) {
     	$(this).addClass( 'dropped' );
