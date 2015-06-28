@@ -148,7 +148,12 @@ function setComments(commentArray){
 
 function saveComment(now,user,com){
 	var localComment = getItem(getQuerystring("id"));
-	localComment = JSON.parse(localComment);
+	if( localComment === null ){
+		localComment = {comments:[]};
+	}
+	else{
+		localComment = JSON.parse(localComment);
+	}
 	localComment.comments.push({
 		date:now,
 		name:"板垣真太郎",
