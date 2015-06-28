@@ -130,6 +130,7 @@ function setEventDate(target,fromDate,toDate){
  */
 function initializeCommnet(){
   var com = JSON.parse(getItem(getQuerystring("id")));
+  if( com === null ) return;
   setComments(com.comments);
 }
 
