@@ -2,6 +2,8 @@
 
 $(function() {
     new jBox('Tooltip', {attach: $('.blank')});
+    // 面白そう設定
+    setTopLikeCount();
 });
 var intervalID = setInterval(function(){
 	$('.blank').stop().animate({
@@ -60,3 +62,18 @@ new jBox('Modal', {
     title: '登録画面',
     content: content
 });
+
+function setTopLikeCount(){
+	var count = 0;
+	var target = $('#results').find('.count');
+	$.each(target,function(){
+		$(this[0]).text(getTopLikeCount(count));
+		count++;
+	});
+}
+
+function getTopLikeCount(count){
+	var co = getItem('count' + count );
+	if( co === null ) return likeCounts[count];
+	return co;
+}

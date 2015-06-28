@@ -4,6 +4,8 @@ $(function() {
     setPageContents();
     // コメント設定
     initializeCommnet();
+    // 面白そう数設定
+    getLikeCount();
     $('#jq').jQCloud([]);
     jqdraw();
     // 入力ボタンクリック
@@ -74,6 +76,7 @@ $(function() {
     // 面白そうボタンクリック
     $("#like, .like-count").on("click", function() {
         var count = Number($('.like-count').text());
+        setLikeCount(count+1);
         $('.like-count').empty();
         $('#like').stop().animate({
             fontSize: '30rem'
@@ -140,7 +143,7 @@ function setComments(commentArray){
 		var com = $(this)[0];
 		$('#comments').append(
 		'<div><span class="time">' + com.date +
-		'</span><span class="name">' + com.name + 
+		'</span><span class="name">&nbsp;' + com.name + 
 		'</span><div class="comment margin-b-sm">' + com.comment + 
 		'</div></div>');
 	});
@@ -160,4 +163,13 @@ function saveComment(now,user,com){
 		comment:com
 	});
 	setItem(getQuerystring('id'),JSON.stringify(localComment));
+}
+
+function getLikeCount(){
+	var likeCount = getItem('count' + getQuerystring('id'));
+	$('.like-count').text(likeCount);
+}
+
+function setLikeCount(count){
+	setItem('count' + getQuerystring('id'),count);
 }
