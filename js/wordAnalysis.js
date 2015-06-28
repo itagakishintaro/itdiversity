@@ -44,6 +44,56 @@ function convertjQCloudJSON(json){
 	return convert;
 }
 
-function setMap(mapobj,x,y){
-  mapobj.drawMap(new Y.LatLng(x,y), 17, Y.LayerSetId.NORMAL);
+function setMap(mapobj,location){
+  mapobj.drawMap(location,17, Y.LayerSetId.NORMAL);
+}
+
+/**
+ * 住所から位置情報を検索し、マップを表示する
+ * @param address 住所
+ * 
+ */
+function searchLocation(address,mapobj){
+  $.ajax({
+            url: 'http://geo.search.olp.yahooapis.jp/OpenLocalPlatform/V1/geoCoder',
+            data: createParamJSONForLocation(address),
+            type: 'GET',
+            dataType: "xml",
+            cache: false, // キャッシュOFF
+            // データのロード完了時の処理
+            success: function(xmlLikeText) {
+              xmlLikeText = xmlLikeText.responseText;
+           xml = xmlLikeText.replace("<html><head/><body>", '<?xml version="1.0" encoding="UTF-8" ?>').replace("</body></html>", "").replace("<html><head><style/></head><body>","");
+             var json = $.xml2json(xml);
+             var location = convertLocation(json);
+             console.log(location);
+             setMap(mapobj,location);
+            }
+        });
+}
+
+/**
+ * 住所を設定し、yahooApiのJSONパラメータを作成する
+ * @param address 住所
+ * @return パラメータ(JSON)
+ */
+function createParamJSONForLocation(address){
+  return {
+    "appid":appid,
+    "results":1,
+    "output":'xml',
+    "query":address
+  };
+}
+
+/**
+ * yhoooの住所検索レスポンスを位置情報に変換
+ * @param json 住所検索レスポンス(JSON)
+ * @return 位置クラス
+ */
+function convertLocation(json){
+	var location = json.feature.geometry.coordinates;
+	var locationArray = location.split(',');
+	console.log(locationArray);
+	return new Y.LatLng(parseFloat(locationArray[1]),parseFloat(locationArray[0]));
 }
