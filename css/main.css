@@ -4,7 +4,10 @@ footer {
 .sample {
 	text-align: center;
 }
-
+.center {
+	left: 0;
+	top: 0;
+}
 /*フォント*/
 .font-lg {
 	font-size: 1.5rem;
@@ -64,6 +67,7 @@ hr {
 	left: 0;
 	width:100%;
 	height: 90%;
+	min-height: 650px;
 	margin: 0;
 	padding: 0;
 	background-image: url("../img/bg.png");
@@ -78,7 +82,7 @@ hr {
 	background-color: rgba(255, 255, 255, 0.5);
 }
 .key-visual {
-	margin-top: 25rem;
+	margin-top: 30rem;
 	margin-bottom: 10rem;
 }
 .thema {
@@ -104,26 +108,27 @@ hr {
 }
 /*アイコン部分*/
 .icon-group {
+	height: 10rem;
 	padding: .5rem 1rem;
 	margin-right: .5rem;
 	background-color: rgba(255, 255, 255, 0.75);
 }
 .icon-header-1 {
-	border-bottom: solid 1rem #98d98e;
+	border-bottom: solid .5rem #98d98e;
 	margin-bottom: .5rem;
 	text-align: center;
 	font-size: 2rem;
 	color: black;
 }
 .icon-header-2 {
-	border-bottom: solid 1rem #f6ad49;
+	border-bottom: solid .5rem #f6ad49;
 	margin-bottom: .5rem;
 	text-align: center;
 	font-size: 2rem;
 	color: black;
 }
 .icon-header-3 {
-	border-bottom: solid 1rem #a59aca;
+	border-bottom: solid .5rem #a59aca;
 	margin-bottom: .5rem;
 	text-align: center;
 	font-size: 2rem;
@@ -135,6 +140,7 @@ hr {
 }
 	#icons img {
 		height: 4rem;
+		vertical-align: top;
 	}
 /*過去のアイディア*/
 .past-ideas {
@@ -206,7 +212,7 @@ hr {
 	position: fixed;
 	bottom: -8rem;
 	right: -5rem;
-	background-color: #f0908d;
+	background-color: #1e50a2;
 	width: 20rem;
 	height: 20rem;
 	border-radius: 10rem;
