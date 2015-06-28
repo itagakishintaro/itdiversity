@@ -166,7 +166,11 @@ function saveComment(now,user,com){
 }
 
 function getLikeCount(){
-	var likeCount = getItem('count' + getQuerystring('id'));
+	var id = getQuerystring('id');
+	var likeCount = getItem('count' + id);
+	if( likeCount === null ){
+		likeCount = likeCounts[id];
+	}
 	$('.like-count').text(likeCount);
 }
 

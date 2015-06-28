@@ -67,7 +67,7 @@ function setTopLikeCount(){
 	var count = 0;
 	var target = $('#results').find('.count');
 	$.each(target,function(){
-		$(this[0]).text(getTopLikeCount(count));
+		$(this).text(getTopLikeCount(count));
 		count++;
 	});
 }
