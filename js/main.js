@@ -1,5 +1,11 @@
 'use strict';
 
+$('#table').tablesorter( { sortList: [[1, 1]] } );
+
+$('.card .count').each(function(i, v){
+	$(v).text(likeCounts[i]);
+});
+
 $("#input").hide();
 $('#input-btn').on('click', function() {
     // $("#input").slideToggle();
@@ -10,7 +16,6 @@ $('.draggable').draggable();
 $('.droppable').droppable({
 	drop: function( event, ui ) {
     	$(this).addClass( 'dropped' );
-    	console.log(ui.draggable);
     	ui.draggable.addClass('big-img');
     },
     out: function( event, ui ) {

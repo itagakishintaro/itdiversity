@@ -1,16 +1,19 @@
 $(function() {
+    $('.like-count').text(likeCounts[getQuerystring('id')]);
+
     $('#jq').jQCloud([]);
     jqdraw();
     // 入力ボタンクリック
-    $("#comment-enter").on("click", jqdraw());
+    $("#comment-enter").on("click", jq);
 
+    function jq() {
+        jqappend();
+        jqdraw();
+    }
 
     function jqdraw() {
-        var com = $("#comment-input").val();
-        $("#comments").append('<div>' + com + '</div>');
         var comments = '';
         $("#comments div.comment").each(function(i, v) {
-            console.log($(v).text());
             comments += ($(v).text() + ' ');
         });
         $.ajax({
@@ -33,20 +36,55 @@ $(function() {
         $("#comment-input").val('');
     }
 
+    function jqappend() {
+        var com = $("#comment-input").val();
+        if (com === '') return;
+
+        var now = new XDate().toString('yyyy/MM/dd hh:mm');
+        var html = `
+          <div>
+              <span class="time">${now}</span>
+              <span class="name">板垣真太郎</span>
+              <div class="comment margin-b-sm">${com}</div>
+          </div>
+        `;
+
+        $("#comments").append(html);
+    }
+
     // 参加するボタンクリック
     $("#join").on("click", function() {
-        var chk = $(this).prop('checked'),
-            obj = $(this);
-        (chk) ? obj.prop('disabled', false): obj.prop('disabled', true);
+        console.log('clicked');
+        $('.bubble').show(500);
+        setTimeout(function() {
+            $('.bubble').hide(1000);
+        }, 1500);
     });
 
     // 面白そうボタンクリック
-    $("#like").on("click", function() {
+    $("#like, .like-count").on("click", function() {
         var count = Number($('.like-count').text());
         $('.like-count').empty();
-        $(this).stop().animate({fontSize:'30rem'}, 300).animate({fontSize:'20rem'}, 300);
-        setTimeout(function(){
-          $('.like-count').text(count+1);
-        } ,600);
+        $('#like').stop().animate({
+            fontSize: '30rem'
+        }, 300).animate({
+            fontSize: '20rem'
+        }, 300);
+        setTimeout(function() {
+            $('.like-count').text(count + 1);
+        }, 600);
     });
 });
+
+// http://vba-geek.jp/blog-entry-183.html
+function getQuerystring(key, default_)  
+{  
+   if (default_==null) default_="";  
+   key = key.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");  
+   var regex = new RegExp("[\\?&]"+key+"=([^&#]*)");  
+   var qs = regex.exec(window.location.href);  
+   if(qs == null)  
+    return default_;  
+   else  
+    return qs[1];  
+}  

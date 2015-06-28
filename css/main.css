@@ -2,6 +2,9 @@
 .font-lg {
 	font-size: 1.5rem;
 }
+.font-4rem {
+	font-size: 4rem;
+}
 .underline {
 	width: 100%;
 	border-bottom: solid 1px lightgray;
@@ -43,9 +46,7 @@ hr {
 	margin-bottom: 5rem;
 	text-align: center;
 }
-	.thema img {
-		height: 10rem !important;
-	}
+
 .thema-col {
 	height: 10em;
 	background-color: white;
@@ -89,22 +90,26 @@ hr {
 /*アイディア登録*/
 .new-idea {
 	position: fixed;
-	bottom: -5em;
-	right: -5em;
+	bottom: -8rem;
+	right: -5rem;
 	background-color: #f0908d;
 	width: 20rem;
 	height: 20rem;
 	border-radius: 10rem;
-	padding-top: 5em;
-	padding-left: 3em;
+	padding-top: 3rem;
+	padding-left: 4rem;
+	color: white;
 }
 #input {
 	margin: 2rem 0;
 }
 
 /*アイコンのドラッグアンドドロップ*/
+.draggable {
+	z-index: 9;
+}
 .dropped {
-	background-color: lightgray !important;
+	background-color: #f7fcfe !important;
 }
 .big-img {
 	height: 10rem !important;
@@ -147,6 +152,19 @@ hr {
 	color: white;
 }
 
+.bubble {
+	position: fixed;
+	right: 10rem;
+	bottom: -35rem;
+	width: 30rem;
+	height: 60rem;
+	line-height: 14rem;
+	padding-left: 6rem;
+	font-size: 3rem;
+	background-image: url("../img/bubble.png");
+	background-size:contain;
+	background-repeat: no-repeat;
+}
 
 /*created by http://cssarrowplease.com/*/
 .arrow_box {
