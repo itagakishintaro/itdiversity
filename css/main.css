@@ -182,9 +182,11 @@ hr {
 }
 .big-img {
 	height: 10rem !important;
+	width: 10rem !important;
 }
 .icon {
 	height: 4rem !important;
+	width: 4rem !important;
 }
 .mini-icon {
 	height: 3rem !important;
